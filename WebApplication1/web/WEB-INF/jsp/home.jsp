@@ -93,8 +93,10 @@
             },
             methods: {
                 addCalculation: function() {
+                    const hoy = new Date()
+                    const date = hoy.getDate().toString() + "/" + hoy.getMonth().toString() + "/" + hoy.getFullYear();
                     this.history.unshift({
-                        ...this.calculation,
+                        ...this.calculation, date
                     })
                     this.showAddHistory = false;
                     this.calculation = {}
